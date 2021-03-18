@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Books Oragnizer</string>
+    <string name="tab_text_1">Lista Livros</string>
+    <string name="tab_text_2">Livros para Comprar</string>
+</resources>
