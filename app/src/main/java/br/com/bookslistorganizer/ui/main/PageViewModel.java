@@ -1,4 +1,4 @@
-package br.com.bookslistoragnizer.ui.main;
+package br.com.bookslistorganizer.ui.main;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;

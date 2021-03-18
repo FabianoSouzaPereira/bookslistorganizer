@@ -1,4 +1,4 @@
-package br.com.bookslistoragnizer;
+package br.com.bookslistorganizer;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest{
    public void useAppContext( ){
       // Context of the app under test.
       Context appContext = InstrumentationRegistry.getInstrumentation( ).getTargetContext( );
-      assertEquals( "br.com.bookslistoragnizer" , appContext.getPackageName( ) );
+      assertEquals( "br.com.bookslistorganizer" , appContext.getPackageName( ) );
    }
 }

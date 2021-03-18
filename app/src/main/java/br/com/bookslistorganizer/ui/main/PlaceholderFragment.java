@@ -1,4 +1,4 @@
-package br.com.bookslistoragnizer.ui.main;
+package br.com.bookslistorganizer.ui.main;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,9 +15,9 @@ import androidx.recyclerview.widget.*;
 
 import java.util.*;
 
-import br.com.bookslistoragnizer.*;
-import br.com.bookslistoragnizer.Models.*;
-import br.com.bookslistoragnizer.adapters.*;
+import br.com.bookslistorganizer.*;
+import br.com.bookslistorganizer.Models.*;
+import br.com.bookslistorganizer.adapters.*;
 
 /**
  * A placeholder fragment containing a simple view.

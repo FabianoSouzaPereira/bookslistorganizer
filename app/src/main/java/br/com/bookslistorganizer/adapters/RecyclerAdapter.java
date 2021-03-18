@@ -1,17 +1,16 @@
-package br.com.bookslistoragnizer.adapters;
+package br.com.bookslistorganizer.adapters;
 
 import android.content.*;
 import android.view.*;
 import android.widget.*;
-import android.widget.ListAdapter;
 
 import androidx.annotation.*;
 import androidx.recyclerview.widget.*;
 
 import java.util.*;
 
-import br.com.bookslistoragnizer.*;
-import br.com.bookslistoragnizer.Models.*;
+import br.com.bookslistorganizer.*;
+import br.com.bookslistorganizer.Models.*;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ViewholderBooks>
    implements  View.OnClickListener, View.OnTouchListener, View.OnLongClickListener {

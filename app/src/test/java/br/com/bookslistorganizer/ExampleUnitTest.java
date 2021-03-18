@@ -1,4 +1,4 @@
-package br.com.bookslistoragnizer;
+package br.com.bookslistorganizer;
 
 import org.junit.Test;
 

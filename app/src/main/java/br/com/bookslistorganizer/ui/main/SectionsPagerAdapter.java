@@ -1,4 +1,4 @@
-package br.com.bookslistoragnizer.ui.main;
+package br.com.bookslistorganizer.ui.main;
 
 import android.content.Context;
 
@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-import br.com.bookslistoragnizer.R;
+import br.com.bookslistorganizer.R;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
