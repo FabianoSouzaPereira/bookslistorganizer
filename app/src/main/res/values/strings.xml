@@ -6,4 +6,16 @@
     <string name="imagem_livro">Imagem Livro</string>
     <string name="t_tulo">Título</string>
     <string name="autor">Autor</string>
+    <string name="titulo">Título</string>
+    <string name="autor">Autor</string>
+    <string name="ilustrador">Ilustrador</string>
+    <string name="cover">Cover</string>
+    <string name="edition">Edition</string>
+    <string name="tiragem">Tiragem</string>
+    <string name="acabamento">Acabamento</string>
+    <string name="data_impress_o">Data Impressão</string>
+    <string name="deposito_legal">Deposito legal</string>
+    <string name="isbn">ISBN</string>
+    <string name="e_mail_do_editor">E-mail do Editor</string>
+    <string name="salvar">Salvar</string>
 </resources>

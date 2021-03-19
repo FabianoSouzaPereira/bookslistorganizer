@@ -37,7 +37,7 @@ public class Book{
    }
    
    public void setCode( int mCode){
-      mCode = mCode;
+     this.mCode = mCode;
    }
    
    public String getTitle( ){
