@@ -1,5 +1,6 @@
 package br.com.bookslistorganizer.adapters;
 
+import android.annotation.*;
 import android.content.*;
 import android.view.*;
 import android.widget.*;
@@ -17,62 +18,93 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Viewho
    private View.OnClickListener clicklistener;
    private View.OnTouchListener touchListener;
    private View.OnLongClickListener longClickListener;
-   private List<Book> books;
+   private final List<Book> books;
    private Context context;
    
    public RecyclerAdapter( List <Book> books){
       this.books = books;
    }
    
-   public ViewholderBooks onCreateViewHolder(ViewGroup parent, int ViewType){
-      View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item2,parent,false );
-      view.setOnClickListener(this);
-      view.setOnTouchListener(this);
-      view.setOnLongClickListener(this);
-      return new ViewholderBooks(view);
-   }
-   
-   @Override
-   public void onClick( View view ){
-   
-   }
-   
-   @Override
-   public boolean onLongClick( View view ){
-      return false;
-   }
-   
-   @Override
-   public boolean onTouch( View view , MotionEvent motionEvent ){
-      return false;
-   }
-   
    @NonNull
    @Override
    public ViewholderBooks onCreateViewHolder( @NonNull ViewGroup parent , int viewType ){
-      return null;
+      View view = LayoutInflater.from( parent.getContext()).inflate(R.layout.list_item2,parent,false);
+      view.setOnClickListener(this);
+      view.setOnTouchListener(this);
+      view.setOnLongClickListener(this);
+      return new ViewholderBooks( view );
    }
    
    @Override
-   public void onBindViewHolder( @NonNull ViewholderBooks holder , int position ){
-   
+   public void onBindViewHolder( @NonNull ViewholderBooks viewholder , int position ){
+      Book book = books.get( position );
+      viewholder.id.setId(book.getCode());
+      viewholder.title.setText(book.getTitle());
+      viewholder.author.setText(book.getAuthor());
    }
    
    @Override
    public int getItemCount( ){
-      return 0;
+      return books.size();
    }
    
+   public void setOnClickListener(View.OnClickListener clicklistener){
+      this.clicklistener = clicklistener;
+   }
+   public void setOnTouchListener(View.OnTouchListener touchListener){
+      this.touchListener = touchListener;
+   }
+   public void setOnLongClickListener(View.OnLongClickListener longClickListener){
+      this.longClickListener = longClickListener;
+   }
+   
+   @Override
+   public void onClick( View view ){
+      if(clicklistener != null){
+         clicklistener.onClick(view);
+      }
+   }
+   
+   @Override
+   public boolean onLongClick( View view ){
+      if(longClickListener != null){
+         longClickListener.onLongClick(view);
+      }
+      return false;
+   }
+   
+   @SuppressLint( "ClickableViewAccessibility" )
+   @Override
+   public boolean onTouch( View view , MotionEvent motionEvent ){
+      if(touchListener != null){
+         touchListener.onTouch(view, motionEvent) ;
+      }
+      return false;
+   }
+   
+   public void removeItem(int position) {
+      books.remove(position);
+      notifyItemRemoved(position);
+   }
+   
+   public void restoreItem(Book item, int position) {
+      books.add(position, item);
+      notifyItemInserted(position);
+   }
    
    //classe interna ViewholderBook
-   public class ViewholderBooks extends RecyclerView.ViewHolder {
-      EditText nome;
+   public static class ViewholderBooks extends RecyclerView.ViewHolder {
+      TextView id;
+      EditText title;
+      EditText author;
    
       public ViewholderBooks( @NonNull View itemView ){
          super( itemView );
-         nome = itemView.findViewById( R.id.nome );
+         id = itemView.findViewById( R.id.tvBookId );
+         title = itemView.findViewById( R.id.edtTitle );
+         author = itemView.findViewById( R.id.edtAuthor );
       }
    }
-   //FIm viewholder
+   //Fim viewholder
   
 }

@@ -96,7 +96,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edtFinishing" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName12"
+        android:id="@+id/edtLegalDeposit"
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
