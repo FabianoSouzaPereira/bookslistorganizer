@@ -1,0 +1,11 @@
+<root>
+    <item name='br.com.bookslistorganizer.adapters.RecyclerAdapter br.com.bookslistorganizer.adapters.RecyclerAdapter.ViewholderBooks onCreateViewHolder(android.view.ViewGroup, int)'>
+        <annotation name='org.jetbrains.annotations.NotNull' />
+    </item>
+    <item name='br.com.bookslistorganizer.adapters.RecyclerAdapter void onBindViewHolder(br.com.bookslistorganizer.adapters.RecyclerAdapter.ViewholderBooks, int) 0'>
+        <annotation name='android.annotation.NonNull' />
+    </item>
+    <item name='br.com.bookslistorganizer.adapters.RecyclerAdapter.ViewholderBooks ViewholderBooks(android.view.View) 0'>
+        <annotation name='android.annotation.NonNull' />
+    </item>
+</root>

@@ -95,26 +95,26 @@ public class Database  extends SQLiteOpenHelper{
    
    public Book selectBook(int code){
       SQLiteDatabase db = this.getWritableDatabase();
-      Cursor cursor = db.query(BOOK_TABLE, Bookcol,CODE_COLUMN + " = ?",
+      Cursor c = db.query(BOOK_TABLE, Bookcol,CODE_COLUMN + " = ?",
          new String[]{String.valueOf(code)},null,null,null,null);
-      
-      if(cursor != null){ cursor.moveToFirst();  }
-      Book book = new Book(
-         Integer.parseInt( Objects.requireNonNull( cursor , "0").getString(0)),
-         cursor.getString(1),
-         cursor.getString(2),
-         cursor.getString(3),
-         cursor.getString(4),
-         cursor.getString(5),
-         cursor.getString(6),
-         cursor.getString(7),
-         cursor.getString(8),
-         cursor.getString(9),
-         cursor.getString(10),
-         cursor.getString(11)
-      );
-      cursor.close();
-      db.close();
+   
+      if(c != null){ c.moveToFirst();  }
+         Book book = new Book(
+            Integer.parseInt( Objects.requireNonNull( c, "0" ).getString( 0 ) ),
+            c.getString( 1 ),
+            c.getString( 2 ),
+            c.getString( 3 ),
+            c.getString( 4 ),
+            c.getString( 5 ),
+            c.getString( 6 ),
+            c.getString( 7 ),
+            c.getString( 8 ),
+            c.getString( 9 ),
+            c.getString( 10 ),
+            c.getString( 11 )
+         );
+         c.close();
+         db.close();
       
       return book;
    }
@@ -140,6 +140,7 @@ public class Database  extends SQLiteOpenHelper{
             book.setLegaldeposit(c.getString(9));
             book.setIsbn(c.getString(10));
             book.setEmail(c.getString(11));
+            books.add(book);
          }while(c.moveToNext());
          c.close();
          db.close();

@@ -5,7 +5,6 @@ import android.content.*;
 import android.view.*;
 import android.widget.*;
 
-import androidx.annotation.*;
 import androidx.recyclerview.widget.*;
 
 import java.util.*;
@@ -25,9 +24,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Viewho
       this.books = books;
    }
    
-   @NonNull
    @Override
-   public ViewholderBooks onCreateViewHolder( @NonNull ViewGroup parent , int viewType ){
+   public ViewholderBooks onCreateViewHolder( ViewGroup parent , int viewType ){
       View view = LayoutInflater.from( parent.getContext()).inflate(R.layout.list_item2,parent,false);
       view.setOnClickListener(this);
       view.setOnTouchListener(this);
@@ -36,7 +34,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Viewho
    }
    
    @Override
-   public void onBindViewHolder( @NonNull ViewholderBooks viewholder , int position ){
+   public void onBindViewHolder( ViewholderBooks viewholder , int position ){
       Book book = books.get( position );
       viewholder.id.setId(book.getCode());
       viewholder.title.setText(book.getTitle());
@@ -95,14 +93,14 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Viewho
    //classe interna ViewholderBook
    public static class ViewholderBooks extends RecyclerView.ViewHolder {
       TextView id;
-      EditText title;
-      EditText author;
+      TextView title;
+      TextView author;
    
-      public ViewholderBooks( @NonNull View itemView ){
+      public ViewholderBooks( View itemView ){
          super( itemView );
          id = itemView.findViewById( R.id.tvBookId );
-         title = itemView.findViewById( R.id.edtTitle );
-         author = itemView.findViewById( R.id.edtAuthor );
+         title = itemView.findViewById( R.id.tvTitle );
+         author = itemView.findViewById( R.id.tvAuthor );
       }
    }
    //Fim viewholder

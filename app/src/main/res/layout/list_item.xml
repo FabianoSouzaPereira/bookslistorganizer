@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/titulo"
+        android:text="@string/title"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,7 +24,7 @@
         android:layout_marginStart="1dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/autor"
+        android:text="@string/author"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtTitle"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/ilustrador"
+        android:text="@string/ilustrator"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtAuthor" />
@@ -72,7 +72,7 @@
         android:layout_marginEnd="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/tiragem"
+        android:text="@string/print"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtEdition" />
@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/acabamento"
+        android:text="@string/finishing"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtImpression" />
@@ -95,7 +95,7 @@
         android:layout_marginStart="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/data_impress_o"
+        android:text="@string/date_printed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edtFinishing"
         tools:ignore="TextFields" />
@@ -107,7 +107,7 @@
         android:layout_marginStart="32dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/deposito_legal"
+        android:text="@string/legal_deposit"
         app:layout_constraintStart_toEndOf="@+id/edtPrintDate"
         app:layout_constraintTop_toBottomOf="@+id/edtFinishing" />
 
@@ -128,7 +128,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/e_mail_do_editor"
+        android:text="@string/email_editor"
         app:layout_constraintTop_toBottomOf="@+id/edtISBN"
         tools:layout_editor_absoluteX="66dp"
         tools:ignore="TextFields" />

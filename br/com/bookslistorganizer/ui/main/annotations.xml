@@ -1,0 +1,12 @@
+<root>
+    <item name='br.com.bookslistorganizer.ui.main.PagerAdapter'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="&quot;deprecation&quot;" />
+        </annotation>
+    </item>
+    <item name='br.com.bookslistorganizer.ui.main.PagerAdapter PagerAdapter(androidx.fragment.app.FragmentManager, int)'>
+        <annotation name='java.lang.SuppressWarnings'>
+            <val val="&quot;deprecation&quot;" />
+        </annotation>
+    </item>
+</root>

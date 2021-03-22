@@ -2,36 +2,52 @@ package br.com.bookslistorganizer;
 
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.*;
 
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
-
-import br.com.bookslistorganizer.ui.main.SectionsPagerAdapter;
+import br.com.bookslistorganizer.ui.main.*;
 
 public class MainActivity extends AppCompatActivity{
+   ViewPager viewPager;
+   TabLayout tabLayout;
+   TabItem tabLibrary;
+   TabItem tabBuyBooks;
+   TabItem tabStatus;
    
    @Override
    protected void onCreate( Bundle savedInstanceState ){
       super.onCreate( savedInstanceState );
       setContentView( R.layout.activity_main );
-      SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter( this , getSupportFragmentManager( ) );
-      ViewPager viewPager = findViewById( R.id.view_pager );
-      viewPager.setAdapter( sectionsPagerAdapter );
-      TabLayout tabs = findViewById( R.id.tabs );
-      tabs.setupWithViewPager( viewPager );
-      FloatingActionButton fab = findViewById( R.id.fab );
       
-      fab.setOnClickListener( new View.OnClickListener( ){
+      tabLayout = findViewById(R.id.tabLayout);
+      tabLibrary = findViewById(R.id.tabLibrary);
+      tabBuyBooks = findViewById(R.id.tabBuyBooks);
+      tabStatus = findViewById(R.id.tabStatus);
+      ViewPager viewPager = findViewById(R.id.viewPager);
+      
+      PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),tabLayout.getTabCount());
+      viewPager.setAdapter(pagerAdapter);
+      
+      tabLayout.addOnTabSelectedListener( new TabLayout.OnTabSelectedListener( ){
          @Override
-         public void onClick( View view ){
-            Snackbar.make( view , "Replace with your own action" , Snackbar.LENGTH_LONG )
-               .setAction( "Action" , null ).show( );
+         public void onTabSelected( TabLayout.Tab tab ){
+            viewPager.setCurrentItem(tab.getPosition());
+      
+         }
+   
+         @Override
+         public void onTabUnselected( TabLayout.Tab tab ){
+      
+         }
+   
+         @Override
+         public void onTabReselected( TabLayout.Tab tab ){
+      
          }
       } );
    }
+   
+
 }
