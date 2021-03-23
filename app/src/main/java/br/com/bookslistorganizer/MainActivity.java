@@ -7,6 +7,8 @@ import com.google.android.material.tabs.*;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.*;
+
 import br.com.bookslistorganizer.ui.main.*;
 
 public class MainActivity extends AppCompatActivity{
@@ -49,5 +51,24 @@ public class MainActivity extends AppCompatActivity{
       } );
    }
    
-
+   @Override
+   public boolean equals( Object o ){
+      if( this == o ){
+         return true;
+      }
+      if( !( o instanceof MainActivity ) ){
+         return false;
+      }
+      MainActivity that = ( MainActivity ) o;
+      return Objects.equals( viewPager , that.viewPager ) &&
+         Objects.equals( tabLayout , that.tabLayout ) &&
+         Objects.equals( tabLibrary , that.tabLibrary ) &&
+         Objects.equals( tabBuyBooks , that.tabBuyBooks ) &&
+         Objects.equals( tabStatus , that.tabStatus );
+   }
+   
+   @Override
+   public int hashCode( ){
+      return Objects.hash( viewPager , tabLayout , tabLibrary , tabBuyBooks , tabStatus );
+   }
 }

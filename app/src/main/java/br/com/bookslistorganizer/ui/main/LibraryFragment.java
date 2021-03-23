@@ -2,6 +2,7 @@ package br.com.bookslistorganizer.ui.main;
 
 import android.content.*;
 import android.os.Bundle;
+import android.util.*;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -75,12 +76,8 @@ public class LibraryFragment extends Fragment{
             Intent intent = new Intent(getContext(), ManagerBooks.class);
             String insert = "Insert";
             intent.putExtra( "Title", insert );
+            Log.i(" onClik -> ", "LibraryFragment" );
             startActivity(intent);
-//            root.getContext().getSupportFragmentManager()
-//               .beginTransaction()
-//               .add(R.id.content_login, new RegisterFragment ())
-//               .addToBackStack (null)
-//               .commit ();
          }
       } );
       readData();

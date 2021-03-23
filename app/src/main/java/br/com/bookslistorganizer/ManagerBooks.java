@@ -1,29 +1,59 @@
 package br.com.bookslistorganizer;
 
-import androidx.annotation.*;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.*;
-import androidx.viewpager.widget.*;
-import androidx.viewpager2.widget.*;
 
+import android.content.*;
 import android.os.Bundle;
-import android.view.*;
+import android.util.*;
+import android.widget.*;
+
+import java.util.*;
 
 import br.com.bookslistorganizer.ui.books.*;
-import br.com.bookslistorganizer.ui.books.PagerAdapter;
 
 public class ManagerBooks extends AppCompatActivity{
-   PagerAdapter adapter;
-   ViewPager2 viewPager2;
+   
+   private static String tbTitle = "ManagerBooks";
+
    @Override
    protected void onCreate( Bundle savedInstanceState ){
       super.onCreate( savedInstanceState );
       setContentView( R.layout.activity_manager_books );
-      viewPager2 = findViewById(R.id.viewPager2);
+      setTitle(tbTitle);
+
+      Intent intent = getIntent();
+      tbTitle = intent.getStringExtra("Title");
       
-      adapter = new PagerAdapter(this);
-      viewPager2.setAdapter(adapter);
-
+      if( tbTitle.equals( "Insert" ) ){
+         try{
+            Toast.makeText( this , "Title is equals insert." , Toast.LENGTH_SHORT ).show( );
+            getSupportFragmentManager().beginTransaction()
+               .add(R.id.viewPager2, new InsertFragment())
+               .commit();
+         }catch( Exception e ){
+            e.printStackTrace( );
+         }
+      }
    }
-
+   
+   public void setPageTitle( String title){
+      tbTitle = title;
+   }
+   
+   @Override
+   public boolean equals( Object o ){
+      if( this == o ){
+         return true;
+      }
+      if( !( o instanceof ManagerBooks ) ){
+         return false;
+      }
+      ManagerBooks that = ( ManagerBooks ) o;
+      return Objects.equals( tbTitle, tbTitle );
+   }
+   
+   @Override
+   public int hashCode( ){
+      return Objects.hash( tbTitle );
+   }
 }

@@ -7,8 +7,6 @@ import androidx.test.core.app.*;
 import androidx.test.espresso.*;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.*;
-import androidx.test.rule.*;
-import androidx.test.runner.*;
 
 import org.hamcrest.Description;
 import org.hamcrest.*;

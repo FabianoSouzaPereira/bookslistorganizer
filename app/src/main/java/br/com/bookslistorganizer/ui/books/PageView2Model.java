@@ -1,7 +1,5 @@
 package br.com.bookslistorganizer.ui.books;
 
-import android.content.*;
-
 import androidx.arch.core.util.*;
 import androidx.lifecycle.*;
 
